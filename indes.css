@@ -121,6 +121,12 @@ body {
 	border-radius: 16px;
 }
 
+.photo-frame--cat {
+	right: clamp(90px, 20vw, 300px);
+	left: auto;
+	aspect-ratio: 1;
+}
+
 .photo-frame--bottom-right {
 	top: auto;
 	right: clamp(12px, 3vw, 48px);
@@ -133,6 +139,14 @@ body {
 	backdrop-filter: none;
 }
 
+.photo-frame--sticker {
+	padding: 8px;
+	border: 1px solid rgb(255 177 208 / 55%);
+	border-radius: 50%;
+	background: #ffeaf2;
+	box-shadow: 0 12px 30px rgb(255 118 171 / 24%);
+}
+
 .photo-frame--bottom-right::before {
 	display: none;
 }
@@ -140,6 +154,11 @@ body {
 .photo-frame--bottom-right img {
 	object-fit: contain;
 	border-radius: 14px;
+}
+
+.photo-frame--sticker img {
+	border-radius: 50%;
+	filter: none;
 }
 
 .photo-frame--extra {
@@ -187,6 +206,21 @@ body {
 	object-fit: cover;
 	border-radius: 14px;
 	filter: saturate(1.08) contrast(1.05) brightness(1.02);
+}
+
+.photo-frame--cutout,
+.photo-frame--cutout:hover {
+	box-shadow: none;
+}
+
+.photo-frame--cutout::before {
+	display: none;
+}
+
+.photo-frame--cutout img {
+	border-radius: 0;
+	object-fit: contain;
+	filter: drop-shadow(0 8px 12px rgb(0 0 0 / 30%));
 }
 
 @keyframes photo-pulse {
